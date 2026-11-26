@@ -6,12 +6,24 @@
 <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAe1BMVEUDuu3///8AtuwAue1c0/QAt+1a0vSZ4/gOve4Ju+4AtOzf9v31/P4iw/DS8/yf5fnE7/tNzvMsxvHw+/7t+v7k+P2U4veO4PeA3Pbp+f7h9/3Y9f3I8Pxt1/Vi1PRQz/NDzPIzyPEWv+76/v/3/f+87fqn5/mI3/Z82vb+fQDoAAAA10lEQVQ4y63T2c7CIBCGYWamUwFZurfuy7/e/xVaeySlYmJ8T78nISQgPh0xU2pGZa1EfrazHJz5an2FT3brYKoul4UqAHx5Hhqoq6VTMAc4aER9acDjEviFPd2voP9gKykGVECHkzyBsRzvI+g1jWG5BFDIPXRKjqkcTKUwPISPbvsN9XpqA9DuehXsF4g64APALAY+AHkMVm+CzToNVld1NAmwE0zaJ0DBQughAcxZ66tLAGj6f/f2NdMgewXKGHSPgOTPfG/Dh0vqlAXlluefahaLT3UDvrAKrj7jLKkAAAAASUVORK5CYII=" />
 
 <title>ACME Web Browser Client | ACME客户端H5网页单文件版，在线免费申请签发SSL/TLS通配符IP泛域名HTTPS证书，支持Let's Encrypt、ZeroSSL、IPv4、IPv6，无需账号免登录注册 | Windows macOS Get Wildcard Certificates Online For Free - Single HTML File</title>
+	<!-- Bootstrap 5 CSS (UI from muzihuaner fork / ssl.quickso.cn) -->
+	<link href="https://testingcf.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://testingcf.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+/* 选项间距修复：Bootstrap reboot 会清掉单选/复选的默认边距，补回来 */
+label{margin-right:16px}
+label:last-child{margin-right:0}
+input[type="radio"],input[type="checkbox"]{margin-right:5px}
+/* Profile 的 [?] 帮助链接紧跟在 label 后面，不能被上面的 label 间距推开 */
+.acmeProfileItems a{margin-left:-14px;margin-right:8px}
+</style>
 </head>
 
 <body>
 <script>
 var Version="1.0.260705";
-console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client/blob/main/LICENSE");
+console.log("LICENSE: GPL-3.0, https://github.com/xiuse/ACME-HTML-Web-Browser-Client/blob/main/LICENSE");
 /***********************************
 中英对照翻译主要来自：Chrome自带翻译+百度翻译，由中文翻译成English（作者英文很菜）。
 The Chinese-English translation is mainly from: Chrome comes with translation + Baidu translation, which is translated from Chinese to English (the author's English level is very low)
@@ -27,19 +39,29 @@ Thank you for watching the source code of this client. The code of all functions
 <div class="mainBox acmeReadDirGotoCORSState" style="display:none"></div>
 
 <div class="mainBox">
-	<span style="font-size:32px;font-weight:bold;color:#03baed;">
-		<span class="langCN clientNameCN">HTML5网页版ACME客户端</span>
-		<span class="langEN clientNameEN">ACME Web Browser Client</span>
-	</span>
-	<span class="versionBox versionBoxMargin" style="font-size:14px;color:#03baed;margin-right:80px"></span>
-	<span style="display:inline-block">
-		<span class="langCN">开源代码：</span>
-		<span class="langEN">Open source: </span>
-		<a href="https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client" target="_blank">GitHub >></a>
-		<span class="langCN">
-			| <a href="https://gitee.com/xiangyuecn/ACME-HTML-Web-Browser-Client" target="_blank">Gitee >></a>
-		</span>
-	</span>
+	<div class="text-center py-4">
+		<div class="mb-4">
+			<div class="feature-icon text-primary" style="font-size: 3rem;">
+				<i class="bi bi-shield-lock-fill"></i>
+				<span class="fallback-icon">🔒</span>
+			</div>
+		</div>
+		<h1 class="display-4 fw-bold text-primary mb-3">
+			<span class="langCN clientNameCN">HTML5网页版ACME客户端</span>
+			<span class="langEN clientNameEN">ACME Web Browser Client</span>
+		</h1>
+		<p class="lead text-muted mb-4">
+			<span class="langCN">免费申请Let's Encrypt、ZeroSSL等HTTPS证书</span>
+			<span class="langEN">Free SSL certificates from Let's Encrypt, ZeroSSL and more</span>
+		</p>
+		<div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+			<span class="versionBox versionBoxMargin badge bg-primary fs-6" style="margin-right:12px"></span>
+			<div class="d-flex gap-2">
+				<a href="https://github.com/xiuse/ACME-HTML-Web-Browser-Client" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-github"></i> GitHub</a>
+				<a href="https://gitee.com/xiangyuecn/ACME-HTML-Web-Browser-Client" target="_blank" class="btn btn-outline-primary btn-sm langCN">Gitee</a>
+			</div>
+		</div>
+	</div>
 	
 	<ul class="itemBox feature_ul" style="list-style-type: none;margin:8px 0 0 0;padding:0 8px 0 8px;color:#666">
 		<li class="langCN"><i>功能用途</i>本网页客户端用于：向 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a>、<a href="https://zerossl.com/" target="_blank">ZeroSSL</a>、<a href="https://pki.goog/" target="_blank">Google</a> 等支持 ACME 协议的证书颁发机构，免费申请获得用于 HTTPS 的 SSL/TLS 域名证书（RSA、ECC/ECDSA），支持多域名和通配符泛域名，部分机构支持IP证书（IPv4、IPv6）；只需在现代浏览器上操作即可获得 PEM 格式纯文本的域名证书，不依赖操作系统环境，无需下载和安装软件，纯手动操作，<span class="Bold">只专注于申请获得证书这一件事。</span></li>
@@ -77,6 +99,287 @@ Thank you for watching the source code of this client. The code of all functions
 			border-radius: 99px;
 		}
 	</style>
+<style>
+/* ==== QuickSSL (muzihuaner fork) theme, overrides base styles ==== */
+/* ACME HTML Web Browser Client - 样式文件 */
+
+:root {
+	--primary-color: #0d6efd;
+	--secondary-color: #6c757d;
+	--success-color: #198754;
+	--danger-color: #dc3545;
+	--warning-color: #ffc107;
+	--info-color: #0dcaf0;
+	--light-color: #f8f9fa;
+	--dark-color: #212529;
+	--border-radius: 0.5rem;
+	--box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+	--box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	min-height: 100vh;
+	word-wrap: break-word;
+}
+
+.main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 2rem 1rem 5rem;
+}
+
+.mainBox {
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow-lg);
+	margin-bottom: 2rem;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	padding:inherit;
+}
+
+.main-load {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-size: 1.5rem;
+	color: white;
+}
+
+/* 按钮样式 */
+.mainBtn {
+	display: inline-block;
+	cursor: pointer;
+	border: none;
+	border-radius: var(--border-radius);
+	background: var(--primary-color);
+	color: white;
+	padding: 0.75rem 1.5rem;
+	font-size: 1rem;
+	font-weight: 500;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	box-shadow: var(--box-shadow);
+}
+
+.mainBtnMin {
+	padding: 0.5rem 1rem;
+	font-size: 0.875rem;
+}
+
+.mainBtn:hover {
+	background: #0b5ed7;
+	transform: translateY(-2px);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	color: white;
+}
+
+.mainBtn:active {
+	transform: translateY(0);
+	background: #0a58ca;
+}
+
+/* 基础样式类 */
+.pd{
+	padding:0 0 8px 0;
+}
+.Center{
+	text-align: center;
+}
+.FlexBox {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: flex;
+}
+.FlexItem {
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+}
+
+.Bold{
+	font-weight: bold;
+}
+.code{
+	padding: 15px;
+	background-color: #000;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 14px;
+	white-space: pre-wrap;
+	border-radius: 6px;
+	font-style: normal;
+}
+.i{
+	padding: 2px 4px;
+	background-color: #f6f6f6;
+	vertical-align: top;
+	color: #c7254e;
+	font-size: 12px;
+	white-space: pre-wrap;
+	border-radius: 4px;
+	font-style: normal;
+}
+i.must{
+	color:red;
+	font-style:normal;
+}
+
+/* 标题样式 */
+.itemTitle {
+	font-size: 1.75rem;
+	font-weight: 600;
+	color: var(--primary-color);
+	margin-bottom: 1.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--primary-color);
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.itemTitle::before {
+	content: '';
+	width: 4px;
+	height: 2rem;
+	background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+	border-radius: 2px;
+}
+
+/* 项目框样式 */
+.itemBox {
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+	border: 1px solid rgba(13, 110, 253, 0.2);
+	border-radius: var(--border-radius);
+	background: rgba(255, 255, 255, 0.8);
+	transition: all 0.3s ease;
+}
+
+.itemBox:hover {
+	border-color: var(--primary-color);
+	box-shadow: var(--box-shadow);
+	transform: translateY(-2px);
+}
+
+/* 徽章样式 */
+.badge {
+	border-radius: var(--border-radius);
+}
+
+/* 按钮组样式 */
+.btn {
+	border-radius: var(--border-radius);
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	transform: translateY(-1px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+	.main {
+		padding: 1rem 0.5rem 3rem;
+	}
+
+	.mainBox {
+		margin-bottom: 1rem;
+	}
+
+	.itemBox {
+		padding: 1rem;
+	}
+
+	.langBtnBox {
+		position: relative !important;
+		top: auto !important;
+		right: auto !important;
+		margin: 1rem 0;
+		text-align: center;
+	}
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.mainBox {
+	animation: fadeInUp 0.6s ease-out;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--primary-color);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #0b5ed7;
+}
+
+/* 代码块样式 */
+code {
+	background-color: rgba(13, 110, 253, 0.1);
+	color: var(--primary-color);
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.25rem;
+	font-size: 0.875em;
+}
+
+/* 图标备用方案 */
+.feature-icon {
+	position: relative;
+	display: inline-block;
+}
+
+.feature-icon .fallback-icon {
+	display: none;
+}
+
+/* 当Bootstrap Icons未加载时显示备用图标 */
+.feature-icon i:not([class*="bi-"]):before,
+.feature-icon i:empty + .fallback-icon {
+	display: none;
+}
+
+.feature-icon i:empty ~ .fallback-icon {
+	display: inline-block;
+}
+
+/* 检测Bootstrap Icons是否加载 */
+@supports not (font-family: "bootstrap-icons") {
+	.feature-icon i {
+		display: none;
+	}
+	.feature-icon .fallback-icon {
+		display: inline-block;
+	}
+}
+</style>
+
 </div>
 
 
@@ -787,61 +1090,21 @@ var verifyBoxShow=function(){
 		</div>
 	</div>
 	
-	<div class="itemBox">
-		<div class="pd Bold">
-			<span class="langCN">QQ群：交流与支持</span>
-			<span class="langEN">QQ group: communication and support</span>
-		</div>
-		<div class="pd" style="font-size:13px;color:#aaa">
-			<span class="langCN">欢迎加QQ群：①群<i class="i">421882406(满)</i>、②群<i class="i">1091335092</i>，纯小写口令：<i class="i">xiangyuecn</i>。如需功能定制，网站、App、小程序、前端和后端等开发需求，请加此QQ群，联系群主（即作者），谢谢~</span>
-			<span class="langEN">Welcome to join the QQ group: ① Group <i class="i">421882406(Full)</i>, ② Group <i class="i">1091335092</i>, code: <i class="i">xiangyuecn</i> . If you need function customization, website, app, applet, front-end and back-end development needs, please join this QQ group and contact the group owner (ie the author), thank you~</span>
-		</div>
-	</div>
-	
 </div>
 
 
 
 
-<div style="padding-top:20px;font-size:13px;color:#aaa">
-	<div class="pd langEN">The Chinese-English translation is mainly from: Chrome comes with translation + Baidu translation, which is translated from Chinese to English.</div>
-	
-	<div class="pd">
-		<span class="versionBox"></span>
-		<a style="margin-left:15px" href="https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client/blob/main/LICENSE" target="_blank">License: GPL-3.0</a>
-	</div>
-</div>
 
 
 
 <div class="toastState" style="display:none;position:fixed;padding:10px;bottom:10px;right:10px;width:360px;max-height:120px;overflow-y:auto;background:#fff;box-shadow: 0px 0px 3px #aaa;border-radius: 10px;"></div>
 
-<div class="donateWidget" style="position:fixed;top:30%;right:5px;width:160px">
-	<div style="border-radius:12px;background:linear-gradient(160deg, rgba(0,179,255,.7) 20%, rgba(177,0,255,.7) 80%);max-width:300px;padding:20px 10px;text-align: center;">
-		<div style="font-size:18px;color:#fff;">
-			<span class="langCN">赏包辣条？</span>
-			<span class="langEN">Donate a Coke?</span>
-		</div>
-		<div style="font-size:14px;color:#fff;">
-			<div class="langCN" style="padding:10px 0">客户端工具开发维护不易，期望本项目对你能有所帮助，欢迎通过下面按钮打赏作者~</div>
-			<span class="langEN">It is not easy to develop and maintain client tools. I hope this project can help you. Welcome to reward the author through the following buttons~</span>
-		</div>
-		<div>
-			<span class="langCN">
-				<a id="id_ek8v" target="_blank" class="mainBtn mainBtnMin" style="color:#fff">打赏 <span class="donateBtnIco"></span></a>
-				<script> id_ek8v.href=/gitee\.io/.test(location.host)?"https://xiangyuecn.gitee.io/docs/about.html":"https://xiangyuecn.github.io/Docs/about.html" </script>
-			</span>
-			<span class="langEN">
-				<a href="https://xiangyuecn.github.io/Docs/about.html" target="_blank" class="mainBtn mainBtnMin" style="color:#fff">Donate <span class="donateBtnIco"></span></a>
-			</span>
-		</div>
-	</div>
-</div>
-
 <div class="langBtnBox" style="position:fixed;top:0;right:0;padding:5px 10px;font-size:14px;border-radius:0 0 0 10px;background:#f5f5f5;">
 	Language:
 	  <a class="langBtn langBtn_cn" onclick="LangClick('cn')">中文</a>
 	| <a class="langBtn langBtn_en" onclick="LangClick('en')">EN</a>
+	| <a href="https://github.com/xiuse/ACME-HTML-Web-Browser-Client/blob/main/LICENSE" target="_blank">License: GPL-3.0</a>
 </div>
 
 </div>
@@ -896,7 +1159,6 @@ input, textarea {
 	box-shadow: 2px 2px 3px #aaa;
 }
 
-
 .mainBtn{
 	display: inline-block;
 	cursor: pointer;
@@ -927,79 +1189,24 @@ input, textarea {
 .pd{
 	padding:0 0 8px 0;
 }
-.pdT{
-	padding:8px 0 0 0;
-}
-.lb{
-	display:inline-block;
-	vertical-align: middle;
-	background:#00940e;
-	color:#fff;
-	font-size:14px;
-	padding:2px 8px;
-	border-radius: 99px;
-}
 
-.Fill {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
 .Center{
 	text-align: center;
 }
-.CenterV {
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: -moz-flex;
-	display: flex;
-	-webkit-align-items: center;
-	-ms-align-items: center;
-	-moz-align-items: center;
-	align-items: center;
-}
+
 .FlexBox {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: -moz-flex;
 	display: flex;
 }
-.FlexBoxV{
-	-webkit-flex-direction:column;
-	-ms-flex-direction:column;
-	-moz-flex-direction:column;
-	flex-direction:column;
-}
-.FlexCenter{
-	-webkit-box-pack:center;
-	-ms-box-pack:center;
-	-moz-box-pack:center;
-	box-pack:center;
-	-webkit-justify-content:center;
-	-ms-justify-content:center;
-	-moz-justify-content:center;
-	justify-content:center;
-}
-.FlexCenterV{
-	-webkit-box-align:center;
-	-ms-box-align:center;
-	-moz-box-align:center;
-	box-align:center;
-	-webkit-align-items:center;
-	-ms-align-items:center;
-	-moz-align-items:center;
-	align-items:center;
-}
+
 .FlexItem {
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	-moz-flex: 1;
 	flex: 1;
 }
-
 
 .Bold{
 	font-weight: bold;
@@ -1039,16 +1246,21 @@ i.must{
 	border:1px #ccc dashed;
 	border-radius: 6px;
 }
+
+/* 宽度对齐原版：抵消 fork 主题给 .main 加的 16px 两侧内边距（Bootstrap border-box 下会算进 900px 上限把卡片挤窄 32px），上限放宽到 932px 后卡片恢复 900px */
+.main{max-width:932px}
 </style>
 
 
 
 
+<script src="https://testingcf.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
 //=================================================
 //================= UI functions ==================
 //=================================================
-//LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
+//LICENSE: GPL-3.0, https://github.com/xiuse/ACME-HTML-Web-Browser-Client
 (function(){
 "use strict";
 var ChoiceAcmeURLStoreKey="ACME_HTML_choice_acmeURL";
@@ -1059,12 +1271,10 @@ var DropConfigFile={}; //拖拽进来的上次配置文件
 /************** UI: Initialize on Launch **************/
 window.initMainUI=function(){
 	$(".eccCurveNames").html(X509.SupportECCType2Names().join(Lang("、",", ")));
-	$(".donateBtnIco").html(unescape("%uD83D%uDE18"));
 	$(".versionBox").html(Lang("版本: "+Version,"Ver: "+Version));
 	
 	if(/mobile/i.test(navigator.userAgent)){
 		$(".main").prepend($(".langBtnBox").css("position",null));
-		$(".donateWidget").css("position",null);
 	}
 	
 	CLog("initMainUI",0,Lang(
@@ -1769,9 +1979,9 @@ var downloadStepShow=function(){
 	
 	var logTitle='/********** '+Lang($(".clientNameCN").html(),$(".clientNameEN").html(),true)+' *********/';
 	logTxts.push(logTitle);
-	logTxts.push(Lang("在线网址：","Online website: ", true)+'https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html');
+	logTxts.push(Lang("在线网址：","Online website: ", true)+'https://acme.xi.to/');
 	logTxts.push("");
-	logTxts.push('GitHub: https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client');
+	logTxts.push('GitHub: https://github.com/xiuse/ACME-HTML-Web-Browser-Client');
 	logTxts.push('Gitee: https://gitee.com/xiangyuecn/ACME-HTML-Web-Browser-Client');
 	logTxts.push("");
 	logTxts.push(Lang("提示：你可以将本文件拖拽进客户端网页内，将自动填充本次证书申请的所有配置参数。","Tip: You can drag and drop this file into the client web page, and all configuration parameters of this certificate application will be filled automatically.",true));
@@ -1922,7 +2132,7 @@ window.Test_Restore_StepDownload=function(){
 //===================================================
 //================= ACME functions ==================
 //===================================================
-//LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
+//LICENSE: GPL-3.0, https://github.com/xiuse/ACME-HTML-Web-Browser-Client
 (function(){
 "use strict";
 
@@ -2399,7 +2609,7 @@ var request=function(url,post,True,False){
 //==================================================================
 //================= RSA/ECC/X.509/ASN.1 functions ==================
 //==================================================================
-//LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
+//LICENSE: GPL-3.0, https://github.com/xiuse/ACME-HTML-Web-Browser-Client
 (function(){
 "use strict";
 
@@ -2866,7 +3076,7 @@ ASN1.prototype={
 //===========================================================
 //================= Common functions ==================
 //===========================================================
-//LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
+//LICENSE: GPL-3.0, https://github.com/xiuse/ACME-HTML-Web-Browser-Client
 (function(){
 "use strict";
 
@@ -3077,7 +3287,7 @@ window.Bytes2Base64=function(bytes){
 //===========================================
 //================= Launch ==================
 //===========================================
-//LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
+//LICENSE: GPL-3.0, https://github.com/xiuse/ACME-HTML-Web-Browser-Client
 (function(){
 "use strict";
 
