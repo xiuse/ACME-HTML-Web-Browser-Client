@@ -1,20 +1,15 @@
-[GitHub](https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client) | [Gitee](https://gitee.com/xiangyuecn/ACME-HTML-Web-Browser-Client) | License: [GPL-3.0](LICENSE)
 
-# HTML5网页版ACME客户端 | ACME Web Browser Client
+# HTML5网页版ACME客户端 重置UI版
 
 **本网页客户端（仅一个静态HTML网页文件）用于**：向 [Let's Encrypt](https://letsencrypt.org/)、[ZeroSSL](https://zerossl.com/)、[Google](https://pki.goog/) 等支持 ACME 协议的证书颁发机构，免费申请获得用于 HTTPS 的 SSL/TLS 域名证书（`RSA`、`ECC/ECDSA`），支持多域名和通配符泛域名，部分机构支持IP证书（IPv4、IPv6）；只需在现代浏览器上操作即可获得 PEM 格式纯文本的域名证书，不依赖操作系统环境（Windows、macOS都能用），无需下载和安装软件，无需注册登录，纯手动操作，**只专注于申请获得证书这一件事，简单易用，非常适用于希望手动快捷申请获得证书的使用场景**。
 
-**在线使用网址(GitHub)：** [https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html](https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html)
-
-**交流与支持：欢迎加QQ群 ①群`421882406(满)`、②群`1091335092`，纯小写口令 `xiangyuecn`。如需功能定制，网站、App、小程序、前端和后端等开发需求，请加此QQ群，联系群主（即作者），谢谢~**
+**在线使用网址(GitHub)：** [https://acme.xi.to/](https://acme.xi.to/)
 
 [​](?)
 
 **This web client (only a single static HTML web page file) is used to**: apply for free SSL/TLS domain name certificates (`RSA`, `ECC/ECDSA`) for HTTPS from Let's Encrypt , ZeroSSL , Google and other certificate authorities that support the ACME protocol, and support multiple domain names and wildcard pan-domain names, some certificate authorities support IP certificates (IPv4, IPv6); Simply operate on a modern browser to obtain a domain name certificate in plain text in PEM format, does not depend on the operating system environment (both Windows and macOS can be used), does not need to download and install software, does not need to register and log in, and is purely manual, **only focus on the only thing that is to apply for and obtain a certificate, which is simple and easy to use, It is very suitable for scenarios where you want to apply for certificates manually and quickly**.
 
-**Online website (GitHub):** [https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html](https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html)
-
-**Communication and support: Welcome to join the QQ group, ① Group `421882406(Full)`, ② Group `1091335092`, code `xiangyuecn` . If you need function customization, website, app, applet, front-end and back-end development needs, please join this QQ group and contact the group owner (ie the author), thank you~**
+**Online website (GitHub):** [https://acme.xi.to/](https://acme.xi.to/)
 
 
 
@@ -62,7 +57,7 @@
 
 ## 使用方法 | Usage
 
-1. **打开本网页客户端**：可以直接双击打开保存在本地的HTML文件，或者直接打开[在线网页](https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html)使用;
+1. **打开本网页客户端**：可以直接双击打开保存在本地的HTML文件，或者直接打开[在线网页](https://acme.xi.to/)使用;
 2. **步骤一**：在网页内选择证书颁发机构，或填写支持的ACME服务地址；不同证书颁发机构需要的操作不一定相同，请根据提示进行操作；
 3. **步骤二**：在网页内填写需要申请证书的域名（支持多域名、通配符、IP），和密钥等信息配置；不同证书颁发机构需要填写的配置不一定相同，请根据提示进行操作；
 4. **步骤三**：根据网页内显示的第三步内容，给每个域名配置好合适的域名所有权验证方式；常见的验证方式有：DNS解析中配置TXT记录进行验证、上传文件到服务器进行验证，通配符域名一般仅支持DNS验证；等全部配置完成后开始验证；
@@ -71,7 +66,7 @@
 
 [​](?)
 
-1. **Open this webpage client**: you can directly double-click to open the HTML file saved locally, or directly open the [online webpage](https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html) for use;
+1. **Open this webpage client**: you can directly double-click to open the HTML file saved locally, or directly open the [online webpage](https://acme.xi.to/) for use;
 2. **Step 1**: Select a certificate authority in the webpage, or fill in the supported ACME service address; the operations required by different certificate authorities may not be the same, please operate according to the prompts;
 3. **Step 2**: Fill in the domain name (multiple domain names, wildcards, and IP addresses are supported) to apply for a certificate, and the configuration of the key and other information in the webpage; the configuration that needs to be filled in by different certificate authorities may not be the same, please operate according to the prompts;
 4. **Step 3**: Configure an appropriate domain name ownership verification method for each domain name according to the third step content displayed on the webpage; common verification methods include: configuring TXT records in DNS resolution for verification, uploading files to the server for verification; wildcard domain names Generally, only DNS verification is supported; the verification starts after all configurations are completed;
@@ -87,7 +82,7 @@
 
 ## 使用截图 | Use Screenshots
 
-![](Screenshot-CN.png)
+![](2026-11-25 17.36.26.png)
 
 ![](Screenshot-EN.png)
 
@@ -153,13 +148,3 @@ I have been applying for a certificate through the `diafygi/gethttpsforfree` web
 [​](?)
 
 [​](?)
-
-## 捐赠 | Donate
-如果这个项目有帮助到您，欢迎 Star 一下方便以后找得到。
-
-If this project is helpful to you, welcome Star, it will be convenient to find it in the future.
-
-您也可以使用支付宝或微信打赏作者：
-
-![](https://gitee.com/xiangyuecn/Recorder/raw/master/assets/donate-alipay.png)  ![](https://gitee.com/xiangyuecn/Recorder/raw/master/assets/donate-weixin.png)
-
