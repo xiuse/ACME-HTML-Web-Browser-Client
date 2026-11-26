@@ -82,7 +82,7 @@
 
 ## 使用截图 | Use Screenshots
 
-![](2026-11-25 17.36.26.png)
+![](Screenshot-CN.png)
 
 ![](Screenshot-EN.png)
 
